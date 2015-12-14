@@ -104,10 +104,10 @@ Stringify Documentation Example
 
 Stringify Complex Object
     ${names} =       Create List         First Name     Family Name    Email
-    ${data} =        Create Dictionary   names  ${names}   a  1   b  12
+    ${data} =        Create Dictionary   names=${names}   a=1   b=12
     ${json_string}=  Stringify JSON      ${data}
 
-    Should Be Equal As Strings  ${json_string}   {"a": "1", "b": "12", "names": ["First Name", "Family Name", "Email"]}
+    Should Be Equal As Strings  ${json_string}   {"names": ["First Name", "Family Name", "Email"], "a": "1", "b": "12"}
 
 Stringify Data With Chinese String
     Set Test Variable  ${data}  中
